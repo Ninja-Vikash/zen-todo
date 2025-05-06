@@ -7,9 +7,11 @@ export async function createUserApi() {
 
 export async function createTodoApi(todo) {
     try {
-        const response = await axios.post("/api", todo, {
+        const response = await axios.post("/api", todo, 
+{
+headers: {
             "Content-Type": "application/json",
-        });
+        }});
         return response.data;
     } catch (error) {
         console.log("Error while creating todo in client", error);
